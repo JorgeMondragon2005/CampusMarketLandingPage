@@ -42,6 +42,12 @@ body {
   overflow-x: hidden;
 }
 
+.landing-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,

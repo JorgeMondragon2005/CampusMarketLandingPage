@@ -45,15 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 5. Parallax suave en el Hero (opcional)
+  // 5. Parallax suave en el Hero (solo en desktop)
   const heroContent = document.querySelector('.hero-content');
-  window.addEventListener('scroll', () => {
-    const scrollValue = window.scrollY;
-    if (heroContent && scrollValue < 600) {
-      heroContent.style.transform = `translateY(${scrollValue * 0.2}px)`;
-      heroContent.style.opacity = 1 - (scrollValue / 600);
-    }
-  });
+  if (window.innerWidth > 768) {
+    window.addEventListener('scroll', () => {
+      const scrollValue = window.scrollY;
+      if (heroContent && scrollValue < 600) {
+        heroContent.style.transform = `translateY(${scrollValue * 0.2}px)`;
+        heroContent.style.opacity = 1 - (scrollValue / 600);
+      }
+    });
+  }
 
   // 6. Menú móvil (Hamburger Menu)
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
